@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+       <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" id="placeholderConfigurer">
+              <property name="locations">
+                     <list>
+                            <value>classpath:config/database.properties</value>
+                     </list>
+              </property>
+       </bean>
+
+       <bean id="userDataSourceProperty" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+              <property name="driverClassName">
+                     <value>${user.jdbc.driver}</value>
+              </property>
+              <property name="url">
+                     <value>${user.jdbc.url}</value>
+              </property>
+              <property name="username">
+                     <value>${user.jdbc.username}</value>
+              </property>
+              <property name="password">
+                     <value>${user.jdbc.password}</value>
+              </property>
+              <property name="initialSize">
+                     <value>${user.jdbc.initialSize}</value>
+              </property>
+              <property name="maxTotal">
+                     <value>${user.jdbc.maxTotal}</value>
+              </property>
+              <property name="maxIdle">
+                     <value>${user.jdbc.maxIdle}</value>
+              </property>
+              <property name="minIdle">
+                     <value>${user.jdbc.minIdle}</value>
+              </property>
+              <property name="timeBetweenEvictionRunsMillis">
+                     <value>${user.jdbc.timeBetweenEvictionRunsMillis}</value>
+              </property>
+              <property name="minEvictableIdleTimeMillis">
+                     <value>${user.jdbc.minEvictableIdleTimeMillis}</value>
+              </property>
+       </bean>
+       <bean id="userDataSource" class="org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy">
+              <property name="targetDataSource" ref="userDataSourceProperty"></property>
+       </bean>
+       <bean id="transactionManagerUser" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+              <property name="dataSource" ref="userDataSource"></property>
+       </bean>
+       <tx:annotation-driven transaction-manager="transactionManagerUser"></tx:annotation-driven>
+</beans>

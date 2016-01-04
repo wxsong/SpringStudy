@@ -35,7 +35,7 @@ public class UserDaoImplTest extends AbstractJUnit4SpringContextTests {
      */
     @Test
     public void testFindUserById(){
-        User user = userDao.findUserById("123");
+        User user = userDao.findUserById("1");
         if(user != null){
             System.out.println(user.getUserName());
         }

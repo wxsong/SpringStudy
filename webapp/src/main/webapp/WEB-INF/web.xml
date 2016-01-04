@@ -7,7 +7,7 @@
 
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:/config/application_*.xml</param-value>
+        <param-value>classpath:/config/applicationContext_*.xml</param-value>
     </context-param>
     
     <listener>
@@ -21,6 +21,7 @@
             <param-name>contextConfigLocation</param-name>
             <param-value>classpath:config/servlet-context.xml</param-value>
         </init-param>
+        <load-on-startup>1</load-on-startup>
     </servlet>
 
     <servlet-mapping>

@@ -13,7 +13,7 @@ import javax.annotation.Resource;
  * @author wxsong2
  */
 @Controller
-@RequestMapping("login")
+@RequestMapping("/login")
 public class LoginController {
 
     /**
@@ -43,9 +43,9 @@ public class LoginController {
         boolean isExist = userService.hasMatchUser(userName, password);
         model.put("isUserExist", isExist);
         if(isExist){
-            User user = userService.findUserById("");
+            User user = userService.findUserById("1");
             model.put("user", user);
         }
-        return "login/userInfo/index";
+        return "home";
     }
 }

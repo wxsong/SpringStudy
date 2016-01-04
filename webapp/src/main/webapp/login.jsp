@@ -12,7 +12,7 @@
 </head>
 <body>
 <h2>login</h2>
-<form action="/home.jsp" method="post">
+<form action="/3x/login/getUserInfo" method="post">
   <input type="text" name="userName"><br/>
   <input type="password" name="password"><br/>
   <input type="submit" value="submit">

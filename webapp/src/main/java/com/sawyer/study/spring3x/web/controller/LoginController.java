@@ -48,4 +48,18 @@ public class LoginController {
         }
         return "home";
     }
+
+    /**
+     * get user list
+     * @param model model
+     * @param pageIndex pageIndex
+     * @return list
+     */
+    @RequestMapping("/getUserList")
+    public String getUserList(ModelMap model, Integer pageIndex){
+        if(pageIndex == null){
+            throw new RuntimeException("test");
+        }
+        return "home";
+    }
 }

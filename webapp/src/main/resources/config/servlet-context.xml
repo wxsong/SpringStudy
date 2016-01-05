@@ -9,6 +9,8 @@
        <mvc:annotation-driven />
        <context:component-scan base-package="com.sawyer.study.spring3x.web.controller"></context:component-scan>
 
+       <bean class="com.sawyer.study.spring3x.web.util.ControllerExceptionResolver" />
+
        <bean class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
               <property name="templateLoaderPath" value="WEB-INF/views/" />
               <property name="defaultEncoding" value="UTF-8" />

@@ -28,7 +28,7 @@ public class LoginController {
      */
     @RequestMapping("/index")
     public String index(){
-        return "login/main/index";
+        return "error";
     }
 
     /**
@@ -40,7 +40,9 @@ public class LoginController {
      */
     @RequestMapping("/getUserInfo")
     public String getUserInfo(ModelMap model, String userName, String password){
+        System.out.println("before hasMatchUser");
         boolean isExist = userService.hasMatchUser(userName, password);
+        System.out.println("after hasMatchUser");
         model.put("isUserExist", isExist);
         if(isExist){
             User user = userService.findUserById("1");

@@ -2,12 +2,23 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+       xmlns:task="http://www.springframework.org/schema/task" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
        <mvc:view-controller path="/" view-name="index"/>
 
        <mvc:annotation-driven />
        <context:component-scan base-package="com.sawyer.study.spring3x.web.controller"></context:component-scan>
+       <context:component-scan base-package="com.sawyer.study.spring3x.web.advice"></context:component-scan>
+       <task:annotation-driven />
+       <aop:aspectj-autoproxy />
+
+       <bean id="beforeAdvice" class="com.sawyer.study.spring3x.web.aspectj.PreAspect" />
+       <aop:config>
+              <aop:aspect ref="beforeAdvice" >
+                     <aop:before method="beforeAction" pointcut="execution(*.hasMatchUser(..))" />
+              </aop:aspect>
+       </aop:config>
 
        <bean class="com.sawyer.study.spring3x.web.util.ControllerExceptionResolver" />
 

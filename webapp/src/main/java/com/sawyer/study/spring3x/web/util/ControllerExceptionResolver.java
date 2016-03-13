@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Controller≤„“Ï≥£¥¶¿Ì
+ * ControllerÂ±ÇÂºÇÂ∏∏Â§ÑÁêÜ
  * @author wxsong2
  */
 public class ControllerExceptionResolver implements HandlerExceptionResolver {

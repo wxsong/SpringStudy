@@ -1,7 +1,7 @@
 package com.sawyer.study.spring3x.web.proxy;
 
 /**
- * ¼ÇÂ¼ĞÔÄÜ¼àÊÓĞÅÏ¢
+ * è®°å½•æ€§èƒ½ç›‘è§†ä¿¡æ¯
  * @author wxsong2
  */
 public class MethodPerformance {
@@ -22,7 +22,7 @@ public class MethodPerformance {
     private String serviceMethod;
 
     /**
-     * ¹¹Ôìº¯Êı£¬ĞÔÄÜ¼àÊÓµÄ¿ªÊ¼
+     * æ„é€ å‡½æ•°ï¼Œæ€§èƒ½ç›‘è§†çš„å¼€å§‹
      * @param serviceMethod service method name
      */
     public MethodPerformance(String serviceMethod){
@@ -31,7 +31,7 @@ public class MethodPerformance {
     }
 
     /**
-     * ĞÔÄÜ¼àÊÓ½áÊø
+     * æ€§èƒ½ç›‘è§†ç»“æŸ
      */
     public void printPerformance(){
         end = System.currentTimeMillis();

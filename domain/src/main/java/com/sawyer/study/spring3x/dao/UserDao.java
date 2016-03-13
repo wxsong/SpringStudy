@@ -9,7 +9,7 @@ import com.sawyer.study.spring3x.domain.User;
 public interface UserDao {
 
     /**
-     * ¼à²âÓÃ»§ÃûÃÜÂë
+     * ç›‘æµ‹ç”¨æˆ·åå¯†ç 
      * @param userName userName
      * @param password password
      * @return count
@@ -17,7 +17,7 @@ public interface UserDao {
     int getMatchCount(String userName, String password);
 
     /**
-     * ¸ù¾İuserId²éÑ¯user
+     * æ ¹æ®userIdæŸ¥è¯¢user
      * @param userId userId
      * @return user
      */

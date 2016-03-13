@@ -1,19 +1,19 @@
 package com.sawyer.study.spring3x.web.proxy;
 
 /**
- * ĞÔÄÜ¼àÊÓµÄÊµÏÖÀà
+ * æ€§èƒ½ç›‘è§†çš„å®ç°ç±»
  * @author wxsong2
  */
 public class PerformanceMonitor {
 
     /**
-     * ´øÏß³Ì°²È«µÄ ĞÔÄÜ¼à¿ØÀà
+     * å¸¦çº¿ç¨‹å®‰å…¨çš„ æ€§èƒ½ç›‘æ§ç±»
      */
     private static ThreadLocal<MethodPerformance> performanceThreadLocal = new ThreadLocal<MethodPerformance>();
 
     /**
-     * ¿ªÊ¼¼à¿ØĞÔÄÜ
-     * @param methodName ·½·¨Ãû
+     * å¼€å§‹ç›‘æ§æ€§èƒ½
+     * @param methodName æ–¹æ³•å
      */
     public static void begin(String methodName){
         System.out.println("begin monitor");
@@ -22,7 +22,7 @@ public class PerformanceMonitor {
     }
 
     /**
-     * ½áÊø¼àÊÓ
+     * ç»“æŸç›‘è§†
      */
     public static void end(){
         System.out.println("end monitor");

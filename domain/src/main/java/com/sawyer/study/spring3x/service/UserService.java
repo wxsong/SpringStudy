@@ -9,22 +9,22 @@ import com.sawyer.study.spring3x.domain.User;
 public interface UserService {
 
     /**
-     * ÅĞ¶ÏÊÇ·ñÓĞ·ûºÏÌõ¼şµÄÓÃ»§
-     * @param userName ÓÃ»§Ãû
-     * @param password ÃÜÂë
-     * @return ÊÇ·ñ·ûºÏ
+     * åˆ¤æ–­æ˜¯å¦æœ‰ç¬¦åˆæ¡ä»¶çš„ç”¨æˆ·
+     * @param userName ç”¨æˆ·å
+     * @param password å¯†ç 
+     * @return æ˜¯å¦ç¬¦åˆ
      */
     boolean hasMatchUser(String userName, String password);
 
     /**
-     * ¸ù¾İId»ñÈ¡ÓÃ»§¶ÔÏó
-     * @param userId ÓÃ»§Id
-     * @return ÓÃ»§¶ÔÏó
+     * æ ¹æ®Idè·å–ç”¨æˆ·å¯¹è±¡
+     * @param userId ç”¨æˆ·Id
+     * @return ç”¨æˆ·å¯¹è±¡
      */
     User findUserById(String userId);
 
     /**
-     * ¸üĞÂÓÃ»§ĞÅÏ¢
+     * æ›´æ–°ç”¨æˆ·ä¿¡æ¯
      * @param user user
      */
     void updateUserInfo(User user);

@@ -3,13 +3,13 @@ package com.sawyer.study.spring3x.domain;
 import java.util.Date;
 
 /**
- * user 对象
+ * user 瀵硅薄
  * @author wxsong2
  */
 public class User {
 
     /**
-     * 用户id
+     * 鐢ㄦ埛id
      */
     private String userId;
 

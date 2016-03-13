@@ -14,11 +14,6 @@
        <aop:aspectj-autoproxy />
 
        <bean id="beforeAdvice" class="com.sawyer.study.spring3x.web.aspectj.PreAspect" />
-       <aop:config>
-              <aop:aspect ref="beforeAdvice" >
-                     <aop:before method="beforeAction" pointcut="execution(*.hasMatchUser(..))" />
-              </aop:aspect>
-       </aop:config>
 
        <bean class="com.sawyer.study.spring3x.web.util.ControllerExceptionResolver" />
 

@@ -1,5 +1,7 @@
 package com.sawyer.study.spring3x.web.controller;
 
+import com.sawyer.study.annotation.ClassInfo;
+import com.sawyer.study.annotation.MethodInfo;
 import com.sawyer.study.spring3x.domain.User;
 import com.sawyer.study.spring3x.service.UserService;
 import org.springframework.stereotype.Controller;
@@ -13,6 +15,7 @@ import javax.annotation.Resource;
  * @author wxsong2
  */
 @Controller
+@ClassInfo("Class:LoginController")
 @RequestMapping("/login")
 public class LoginController {
 
@@ -39,6 +42,7 @@ public class LoginController {
      * @return userInfoPage
      */
     @RequestMapping("/getUserInfo")
+    @MethodInfo("get user info method")
     public String getUserInfo(ModelMap model, String userName, String password){
         System.out.println("before hasMatchUser");
         boolean isExist = userService.hasMatchUser(userName, password);
